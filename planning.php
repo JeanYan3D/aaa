@@ -55,23 +55,35 @@
             <i class="bi bi-list"></i>
           </div>
           <div class="top-navbar d-none d-xl-block ms-3">
-          <ul class="navbar-nav align-items-center">
-            <li class="nav-item">
-            <a class="nav-link" href="index.html">Dashboard</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="app-emailbox.html">Email</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="javascript:;">Projects</a>
-            </li>
-            <li class="nav-item d-none d-xxl-block">
-            <a class="nav-link" href="javascript:;">Events</a>
-            </li>
-            <li class="nav-item d-none d-xxl-block">
-            <a class="nav-link" href="app-to-do.html">Todo</a>
-            </li>
+            <ul class="navbar-nav align-items-center">
+              <li class="nav-item">
+                  <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'planning.php'){echo 'active';} ?>" href="planning.php">Planning</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'patients.php'){echo 'active';} ?>" href="patients.php">Patients</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'sejours.php'){echo 'active';} ?>" href="sejours.php">Séjours</a>
+              </li>
+              <li class="nav-item d-none d-xxl-block">
+                  <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'transports.php'){echo 'active';} ?>" href="transports.php">Transports</a>
+              </li>
+              <li class="nav-item d-none d-xxl-block">
+                  <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'rapports.php'){echo 'active';} ?>" href="rapports.php">Rapports</a>
+              </li>
+              <!-- Administration Dropdown -->
+              <li class="nav-item dropdown d-none d-xxl-block">
+                  <a class="nav-link dropdown-toggle <?php if(basename($_SERVER['PHP_SELF']) == 'admin.php'){echo 'active';} ?>" href="#" id="administrationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Administration
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="administrationDropdown">
+                      <li><a class="dropdown-item" href="user_management.php">User Management</a></li>
+                      <li><a class="dropdown-item" href="settings.php">Settings</a></li>
+                      <li><a class="dropdown-item" href="logs.php">Logs</a></li>
+                  </ul>
+              </li>
           </ul>
+
           </div>
           <div class="top-navbar-right ms-auto">
             <ul class="navbar-nav align-items-center">
