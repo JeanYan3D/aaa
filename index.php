@@ -28,6 +28,7 @@
   <link href="assets/css/semi-dark.css" rel="stylesheet" />
   <link href="assets/css/header-colors.css" rel="stylesheet" />
   <link href="assets/css/style.css" rel="stylesheet" />
+
   <title>AAA Runner</title>
 </head>
 
@@ -77,7 +78,7 @@
                       Administration
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="administrationDropdown">
-                      <li><a class="dropdown-item" href="user_management.php">User Management</a></li>
+                      <li><a class="dropdown-item" href="index.php?page=users">User Management</a></li>
                       <li><a class="dropdown-item" href="settings.php">Settings</a></li>
                       <li><a class="dropdown-item" href="logs.php">Logs</a></li>
                   </ul>
@@ -105,8 +106,21 @@
      <!--end top header-->
 
        <!--start content-->
-       <main class="page-content">
-				
+       <main class="page-content" style="padding-top: 0px;">
+				<!-- Le centre de l'appli -->
+          <div id="centre">
+            <?php
+          /*On test l'existance de la page sur le serveur, c'est une protection ou cas ou des ptits malins appelent une page ailleurs qu'en localhost*/
+          $page = $_GET['page'];
+          if(file_exists("$page.php"))
+          {
+            /*Si le fichier existe bien sur le serveur, on l'affiche.*/
+            include ("$page.php");
+          }else{
+            //echo "<head> <META HTTP-EQUIV='Refresh' CONTENT='0;URL=checklogin.php'> </head>";
+            die;
+          }
+        ?>
 			</main>
        <!--end page main-->
 
